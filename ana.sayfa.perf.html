@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orhan Pamuk - Edebiyatın Büyülü Dünyası</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       :root {
+            --primary-color: #3D2B3D;
+            --secondary-color: #C19A6B;
+            --accent-color: #5F0F40;
+            --background-color: #F8F4E3;
+            --text-primary: #2C1810;
+            --turkey-red: #E30A17;
+            --turkey-white: #FFFFFF;
+        }
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background-color);
+            overflow-x: hidden;
+        }
+        .navbar {
+            background: rgba(248, 244, 227, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 10px solid rgba(193, 154, 107, 0.2);
+            transition: all 0.3s ease-in-out;
+            padding: 1.5rem 0;
+        }
+        .navbar.scrolled {
+            background: rgba(61, 43, 61, 0.95) !important;
+            padding: 1rem 0;
+        }
+        .navbar-brand {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+        }
+        .navbar-brand span {
+            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .nav-link {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            position: relative;
+            padding: 0.5rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 30px;
+            background: rgba(193, 154, 107, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-link:hover {
+            background: rgba(95, 15, 64, 0.8);
+            color: white !important;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .navbar-toggler-icon {
+            color: var(--accent-color);
+        }
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        .hero-section {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed;
+        }
+        .hero-content {
+            text-align: center;
+            color: white;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero-text {
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        #about {
+            background-color: var(--background-color);
+            padding: 4rem 0;
+        }
+        #about h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 3rem;
+        }
+        #istiklal {
+            background-color: var(--background-color);
+            padding: 4rem 0;
+            position: relative;
+        }
+        #istiklal h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--turkey-red);
+            margin-bottom: 3rem;
+        }
+        .istiklal-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .kita {
+            font-size: 1.3rem;
+            line-height: 2;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        .kita-number {
+            color: var(--turkey-red);
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        .music-control-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+        .music-control {
+            background: rgba(227, 10, 23, 0.1);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .music-control:hover {
+            background: rgba(227, 10, 23, 0.2);
+        }
+        .music-control i {
+            font-size: 1.2rem;
+            color: var(--turkey-red);
+        }
+        .music-control-text {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+        .turkish-flag {
+            width: 100px;
+            height: 70px;
+            background: linear-gradient(0deg, var(--turkey-red) 50%, var(--turkey-white) 50%);
+            position: relative;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .turkish-flag::before {
+            content: "★";
+            position: absolute;
+            color: white;
+            font-size: 30px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            background: var(--background-color);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(95, 15, 64, 0.4);
+        }
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+        .card-body {
+            background-color: var(--background-color);
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .card-title {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 0.8rem;
+        }
+        .card-text {
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .col-md-4 {
+            width: 100%;
+            max-width: 360px;
+        }
+        @media (min-width: 768px) {
+            .col-md-4 {
+                width: 33.3333%;
+            }
+        }
+        .footer {
+            background: var(--primary-color);
+            color: var(--background-color);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .footer a {
+            color: var(--secondary-color);
+            margin: 0 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: var(--accent-color);
+        }
+        #quotes {
+            background-color: var(--background-color);
+            padding: 4rem 0;
+        }
+        #quotes h2 {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--accent-color);
+            margin-bottom: 3rem;
+        }
+        .quotes-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .quote-box {
+            background: white;
+            border-radius: 15px;
+            padding: 3rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .quote-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            opacity: 0;
+            transition: opacity 1s ease;
+            position: absolute;
+            width: 80%;
+            left: 10%;
+        }
+        .quote-text.active {
+            opacity: 1;
+        }
+        .quote-author {
+            font-family: 'Cinzel Decorative', cursive;
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-top: 1rem;
+            opacity: 0;
+            transition: opacity 1s ease;
+            position: absolute;
+            width: 100%;
+            bottom: 2rem;
+        }
+        .quote-author.active {
+            opacity: 1;
+        }
+        .quote-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .quote-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            opacity: 0.3;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .quote-dot.active {
+            opacity: 1;
+            transform: scale(1.2);
+            background: var(--accent-color);
+        }
+        #musicInfo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 12px 25px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            opacity: 0;
+            animation: fadeIn 0.5s 1s ease-out forwards;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+        }
+        .hidden-audio {
+            display: none;
+        }
+        .background-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .background-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+        }
+        .background-slide.active {
+            opacity: 1;
+        }
+        .background-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(35deg, rgba(61, 43, 43, 0.9) 0%, rgba(95,15,64,0.8) 100%);
+            z-index: 1;
+        }
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+        }
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-top: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        /* Yeni Eklenen Stiller */
+        /* Eserler Galerisi */
+        .book-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+        .book-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .book-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(95, 15, 64, 0.3);
+        }
+        .book-cover {
+            height: 350px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .book-info {
+            padding: 20px;
+            background: white;
+        }
+        .book-title {
+            font-family: 'Cinzel Decorative', cursive;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+        .book-year {
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+        /* Ödüller Bölümü */
+        .award-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        .award-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-right: 20px;
+            min-width: 60px;
+            text-align: center;
+        }
+        .award-content {
+            flex: 1;
+        }
+        /* İletişim Formu */
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .form-control {
+            border: 1px solid rgba(193, 154, 107, 0.3);
+            padding: 12px 15px;
+            margin-bottom: 20px;
+        }
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 0.25rem rgba(193, 154, 107, 0.25);
+        }
+        .btn-submit {
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .btn-submit:hover {
+            background: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        /* Biyografi Bölümü Stilleri */
+        #biography {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .biography-timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .biography-timeline::before {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 10px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -17px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -17px;
+        }
+        
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            position: relative;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .timeline-year {
+            position: absolute;
+            top: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-year {
+            right: -80px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-year {
+            left: -80px;
+        }
+        
+        .timeline-heading {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-family: 'Cinzel Decorative', cursive;
+        }
+        
+        .biography-quote {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--secondary-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .biography-quote blockquote {
+            font-size: 1.3rem;
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: 0;
+        }
+        
+        .biography-quote .blockquote-footer {
+            font-size: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        @media (max-width: 768px) {
+            .biography-timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 18px !important;
+            }
+            
+            .timeline-year {
+                left: 15px !important;
+                right: auto !important;
+                top: -25px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span>Orhan Pamuk</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="hakkında.html">
+                            <i class="fas fa-user me-1"></i>Hakkında
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fotograf galerisi.html">
+                            <i class="fas fa-book-open me-1"></i>Fotoğraf Galerisi
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Eserler.html">
+                            <i class="fas fa-trophy me-1"></i>Eserler
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="haberler.html">
+                            <i class="fas fa-quote-right me-1"></i>Haberler
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="iletişim.html">
+                            <i class="fas fa-envelope me-1"></i>İletişim
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <!-- Background slideshow container -->
+        <div class="background-slideshow">
+            <!-- Background images with overlay -->
+            <div class="background-slide active" style="background-image: url('https://artdogistanbul.com/wp-content/uploads/2021/10/orhan-pamuk-2-scaled.jpg');"></div>
+            <div class="background-slide" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/b/bf/Orhan_Pamuk_in_Rustaveli_Theatre%2C_Tbilisi%2C_Georgia%2C_2014.jpg');"></div>
+            <div class="background-slide" style="background-image: url('https://cdn1.ntv.com.tr/gorsel/PDLDkNd5TUe9Pw3pFmEdew.jpg?width=1000&mode=both&scale=both&v=1315473205000');"></div>
+            <div class="background-slide" style="background-image: url('https://cdn.oggito.com/images/full/2015/9/orhanpamukic1-1.jpg');"></div>
+            <div class="background-slide" style="background-image: url('https://www.artkolik.net/wp-content/uploads/2018/12/Orhan-Pamuk-I%CC%87stanbul-Hat%C4%B1ralar-ve-S%CC%A7ehir.jpg');"></div>
+            <div class="background-slide" style="background-image: url('https://cdnuploads.aa.com.tr/uploads/Contents/2015/10/29/thumbs_b_c_670b48fc25522e0772874374d69a9039.jpg');"></div>
+            <div class="background-overlay"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text" data-aos="fade-up">
+                <h1 class="hero-title">
+                    <span style="color: #C19A6B;">NOBEL EDEBİYAT ÖDÜLLÜ YAZAR</span><br>
+                    <span style="color: white; border-bottom: 4px solid #C19A6B; padding-bottom: 5px;">ORHAN PAMUK</span>
+                </h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="300">
+                    "Zamanın Ötesinde Bir Edebiyat Serüveni"
+                </p>
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="600">
+                    <a href="hakkında.html" class="btn btn-outline-light btn-lg mx-2">Orhan Pamuk Kimdir</a>
+                    <a href="Eserler.html" class="btn btn-light btn-lg mx-2">Eserler</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Biyografi Bölümü -->
+    <section id="biography" class="py-5" style="background: linear-gradient(135deg, rgba(248, 244, 227, 0.9) 0%, rgba(255, 255, 255, 1) 100%);">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2 class="section-title text-center mb-5">Orhan Pamuk'un Hayatı ve Edebi Yolculuğu</h2>
+                    
+                    <div class="biography-timeline">
+                        <!-- Erken Yaşam -->
+                        <div class="timeline-item" data-aos="fade-right">
+                            <div class="timeline-year">1952</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-heading">İstanbul'da Bir Başlangıç</h3>
+                                <p>Ferit Orhan Pamuk, 7 Haziran 1952'de İstanbul'un Nişantaşı semtinde, varlıklı ve batılılaşmış bir ailenin ikinci çocuğu olarak dünyaya geldi. Ailesinin geniş kütüphanesi, küçük yaşlardan itibaren edebiyatla iç içe büyümesini sağladı.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Eğitim -->
+                        <div class="timeline-item" data-aos="fade-left">
+                            <div class="timeline-year">1977</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-heading">Mimarlıktan Edebiyata</h3>
+                                <p>İstanbul Teknik Üniversitesi'nde mimarlık eğitimine başladı ancak üç yıl sonra bırakarak İstanbul Üniversitesi Gazetecilik Enstitüsü'ne geçiş yaptı. 1977'de mezun olduğunda, zihninde yalnızca bir hedef vardı: "Büyük bir yazar olmak."</p>
+                            </div>
+                        </div>
+                        
+                        <!-- İlk Eserler -->
+                        <div class="timeline-item" data-aos="fade-right">
+                            <div class="timeline-year">1982</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-heading">Edebiyat Dünyasına Giriş</h3>
+                                <p>İlk romanı <em>"Cevdet Bey ve Oğulları"</em> yayımlandı ve Orhan Kemal Roman Ödülü'nü kazandı. Bu roman, bir ailenin üç kuşağının hikayesi üzerinden Türkiye'nin modernleşme sürecini anlatıyordu.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Uluslararası Ün -->
+                        <div class="timeline-item" data-aos="fade-left">
+                            <div class="timeline-year">1985</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-heading">Beyaz Kale ile Dönüm Noktası</h3>
+                                <p><em>"Beyaz Kale"</em> romanı, Pamuk'un uluslararası arenada tanınmasını sağladı. Tarihsel kurgu ile postmodern teknikleri birleştiren bu eser, bir Venedikli ile bir Osmanlı bilim adamının kimlik karmaşasını ele alıyordu.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Nobel Ödülü -->
+                        <div class="timeline-item" data-aos="fade-right">
+                            <div class="timeline-year">2006</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-heading">Nobel Edebiyat Ödülü</h3>
+                                <p>"Kentinin melankolik ruhunun izlerini sürerken, kültürlerin çatışması ve iç içe geçmesi için yeni simgeler bulduğu için" Nobel Edebiyat Ödülü'ne layık görüldü. Bu ödülü alan ilk Türk yazar olarak tarihe geçti.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Günümüz -->
+                        <div class="timeline-item" data-aos="fade-left">
+                            <div class="timeline-year">Günümüz</div>
+                            <div class="timeline-content">
+                                <h3 class="timeline-heading">Edebiyatın Büyük Ustası</h3>
+                                <p>Columbia Üniversitesi'nde karşılaştırmalı edebiyat dersleri veren Pamuk, zamanını İstanbul ve New York arasında paylaştırıyor. Eserleri 63'ten fazla dile çevrildi ve dünya çapında milyonlarca okura ulaştı.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="biography-quote mt-5" data-aos="zoom-in">
+                        <blockquote class="blockquote">
+                            <p>"Yazmak, kendini başka bir hayata, başka bir dünyaya adamaktır. Ben bu dünyayı kelimelerle inşa ediyorum."</p>
+                            <footer class="blockquote-footer">Orhan Pamuk, <cite>Nobel Konuşması</cite></footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eserler Bölümü -->
+    <section id="works" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Başlıca Eserleri</h2>
+            <div class="book-gallery">
+                <!-- Kitap 1 -->
+                <div class="book-item" data-aos="fade-up">
+                    <div class="book-cover" style="background-image: url('https://www.nezih.com.tr/benim-adim-kirmizi-147792-51-B.jpg');"></div>
+                    <div class="book-info">
+                        <h3 class="book-title">Benim Adım Kırmızı</h3>
+                        <p class="book-year">1998</p>
+                        <p>16. yüzyıl İstanbul'unda geçen, minyatür sanatı üzerine bir cinayet romanı.</p>
+                    </div>
+                </div>
+                <!-- Kitap 2 -->
+                <div class="book-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="book-cover" style="background-image: url('https://upload.wikimedia.org/wikipedia/tr/b/b5/Kar_kitap.jpg');"></div>
+                    <div class="book-info">
+                        <h3 class="book-title">Kar</h3>
+                        <p class="book-year">2002</p>
+                        <p>Kars şehrinde geçen, siyasi ve dini çatışmaları konu alan bir roman.</p>
+                    </div>
+                </div>
+                <!-- Kitap 3 -->
+                <div class="book-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="book-cover" style="background-image: url('https://img.kitapyurdu.com/v1/getImage/fn:53812/wh:true/wi:800');"></div>
+                    <div class="book-info">
+                        <h3 class="book-title">Masumiyet Müzesi</h3>
+                        <p class="book-year">2008</p>
+                        <p>1970'ler İstanbul'unda geçen bir aşk hikayesi ve müze projesi.</p>
+                    </div>
+                </div>
+                <!-- Kitap 4 -->
+                <div class="book-item" data-aos="fade-up">
+                    <div class="book-cover" style="background-image: url('https://m.media-amazon.com/images/I/61b1znLtzrL.jpg');"></div>
+                    <div class="book-info">
+                        <h3 class="book-title">Kara Kitap</h3>
+                        <p class="book-year">1990</p>
+                        <p>Kayıp eşini arayan bir avukatın İstanbul'da geçen gizemli yolculuğu.</p>
+                    </div>
+                </div>
+                <!-- Kitap 5 -->
+                <div class="book-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="book-cover" style="background-image: url('https://upload.wikimedia.org/wikipedia/tr/4/49/Yeni_Hayat_kapak.jpg');"></div>
+                    <div class="book-info">
+                        <h3 class="book-title">Yeni Hayat</h3>
+                        <p class="book-year">1994</p>
+                        <p>Bir kitabın okuyucularını etkilemesi ve dönüştürmesi üzerine bir roman.</p>
+                    </div>
+                </div>
+                <!-- Kitap 6 -->
+                <div class="book-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="book-cover" style="background-image: url('https://productimages.hepsiburada.net/s/3/375-375/9599298764850.jpg');"></div>
+                    <div class="book-info">
+                        <h3 class="book-title">Kafamda Bir Tuhaflık</h3>
+                        <p class="book-year">2014</p>
+                        <p>İstanbul'un 50 yıllık dönüşümünü bir sokak satıcısının gözünden anlatan roman.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ödüller Bölümü -->
+    <section id="awards" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Aldığı Önemli Ödüller</h2>
+            
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <!-- Nobel Ödülü -->
+                    <div class="award-item" data-aos="fade-right">
+                        <div class="award-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="award-content">
+                            <h3>Nobel Edebiyat Ödülü</h3>
+                            <p class="text-muted">2006</p>
+                            <p>"Kentinin melankolik ruhunun izlerini sürerken, kültürlerin çatışması ve iç içe geçmesi için yeni simgeler bulduğu için" bu ödüle layık görüldü.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- IMPAC Dublin -->
+                    <div class="award-item" data-aos="fade-left">
+                        <div class="award-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="award-content">
+                            <h3>Uluslararası IMPAC Dublin Edebiyat Ödülü</h3>
+                            <p class="text-muted">2003</p>
+                            <p>"Benim Adım Kırmızı" romanı ile dünyanın en prestijli edebiyat ödüllerinden birini kazandı.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Prix du Meilleur Livre Étranger -->
+                    <div class="award-item" data-aos="fade-right">
+                        <div class="award-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="award-content">
+                            <h3>Prix du Meilleur Livre Étranger (En İyi Yabancı Kitap Ödülü)</h3>
+                            <p class="text-muted">2002</p>
+                            <p>Fransa'da verilen bu ödülü "Benim Adım Kırmızı" romanı ile aldı.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Peace Prize of the German Book Trade -->
+                    <div class="award-item" data-aos="fade-left">
+                        <div class="award-icon">
+                            <i class="fas fa-peace"></i>
+                        </div>
+                        <div class="award-content">
+                            <h3>Alman Kitapçılar Birliği Barış Ödülü</h3>
+                            <p class="text-muted">2005</p>
+                            <p>Almanya'nın en prestijli kültür ödüllerinden biri olan bu ödül, Pamuk'un Doğu-Batı diyaloğuna katkıları nedeniyle verildi.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><style>
+        /* Yeni Eklenen Dekoratif Öğeler */
+        .literary-divider {
+            height: 100px;
+            background: url('https://www.transparenttextures.com/patterns/old-paper.png') repeat-x;
+            opacity: 0.3;
+            margin: 50px 0;
+            position: relative;
+        }
+    
+        .ink-splash {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+    
+        .ink-splash-1 {
+            background: url('https://www.clipartmax.com/png/middle/218-2186715_ink-splatter-png-ink-splash-transparent-background.png') center/contain no-repeat;
+            top: -30px;
+            left: 5%;
+        }
+    
+        .ink-splash-2 {
+            background: url('https://www.freeiconspng.com/uploads/ink-splatter-png-5.png') center/contain no-repeat;
+            bottom: -30px;
+            right: 5%;
+            transform: rotate(180deg);
+        }
+    
+        .book-texture {
+            background: url('https://www.transparenttextures.com/patterns/notebook-dark.png') repeat;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1) inset;
+        }
+    
+        .pen-icon {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin: 20px 0;
+        }
+    
+        .typewriter-effect {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(45deg, #3D2B3D, #5F0F40);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            border-left: 3px solid var(--secondary-color);
+            padding-left: 15px;
+            animation: typing 3s steps(40) infinite;
+        }
+    
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+    
+        /* Mevcut Stil Güncellemeleri */
+        #biography {
+            background: url('https://www.transparenttextures.com/patterns/cream-paper.png') repeat;
+        }
+    
+        #works .book-item {
+            border: 1px solid rgba(193, 154, 107, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+    
+        #works .book-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(61,43,61,0.1) 0%, rgba(95,15,64,0.05) 100%);
+        }
+    
+        .contact-form {
+            background: url('https://www.transparenttextures.com/patterns/rice-paper-2.png') repeat;
+        }
+    
+        .footer {
+            position: relative;
+            overflow: hidden;
+        }
+    
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('https://www.freeiconspng.com/uploads/ink-splatter-png-5.png') center/cover;
+            opacity: 0.1;
+            transform: rotate(180deg);
+        }
+    </style>
+    
+    <!-- Bölüm Ayraçları -->
+    <div class="literary-divider">
+        <div class="ink-splash ink-splash-1"></div>
+        <div class="ink-splash ink-splash-2"></div>
+    </div>
+    
+    <!-- Eserler Galerisi Güncellemesi -->
+    <section id="works" class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <i class="fas fa-feather-alt pen-icon"></i>
+                <h2 class="section-title d-inline-block mx-3">Edebi Evren</h2>
+                <i class="fas fa-book-open pen-icon"></i>
+            </div>
+            <h4 class="typewriter-effect text-center mb-4">"Kelimelerin Büyülü Dünyasında Bir Yolculuk..."</h4>
+            <div class="book-gallery">
+
+    </section>
+
+    <!-- Alıntılar Bölümü -->
+    <section id="quotes" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Orhan Pamuk'tan Edebiyat Sözleri</h2>
+            <div class="quotes-container">
+                <div class="quote-box" data-aos="fade-up">
+                    <div class="quote-text active">
+                        "Roman yazmak, kendi kendinin psikiyatristi olmaktır. Başka türlü delirmemek için roman yazıyorum."
+                    </div>
+                    <div class="quote-text">
+                        "İstanbul'un melankolisini hissetmeyen bir insan, bu şehri asla tam olarak anlayamaz."
+                    </div>
+                    <div class="quote-text">
+                        "Okur olmadan yazar olunmaz. İyi bir yazar olmak için önce iyi bir okur olmalısınız."
+                    </div>
+                    <div class="quote-text">
+                        "Kitaplarımda aradığım şey, insan ruhunun derinliklerindeki o gizli hazinedir."
+                    </div>
+                    <div class="quote-text">
+                        "Yazmak, bir şehirde kaybolmak gibidir. Bazen kaybolmak, keşfetmenin en iyi yoludur."
+                    </div>
+                    <div class="quote-text">
+                        "Edebiyat, hayatı anlamlandırma çabasıdır. Okurken ve yazarken kendimizi daha iyi tanırız."
+                    </div>
+                    <div class="quote-text">
+                        "Bir roman yazmak, bir şehir inşa etmek gibidir. Her karakter bir sokak, her olay bir meydandır."
+                    </div>
+                    <div class="quote-text">
+                        "Edebiyatın büyüsü, gerçek ile hayal arasındaki o ince çizgide gizlidir."
+                    </div>
+                    <div class="quote-text">
+                        "Yazmak, yalnızlığın en güzel halidir. Kalabalıklar içinde kendi dünyanızı yaratırsınız."
+                    </div>
+                    <div class="quote-text">
+                        "Her kitap, yazarın ruhundan kopup gelen bir parçadır. Okuyucuya sunulan bir yürek avıdır."
+                    </div>
+                    <div class="quote-author active">Orhan Pamuk</div>
+                    <div class="quote-author">Orhan Pamuk - İstanbul: Hatıralar ve Şehir</div>
+                    <div class="quote-author">Orhan Pamuk - Nobel Konuşması</div>
+                    <div class="quote-author">Orhan Pamuk - Kara Kitap</div>
+                    <div class="quote-author">Orhan Pamuk - Yeni Hayat</div>
+                    <div class="quote-author">Orhan Pamuk - Saf ve Düşünceli Romancı</div>
+                    <div class="quote-author">Orhan Pamuk - Benim Adım Kırmızı</div>
+                    <div class="quote-author">Orhan Pamuk - Masumiyet Müzesi</div>
+                    <div class="quote-author">Orhan Pamuk - Kar</div>
+                    <div class="quote-author">Orhan Pamuk - Kafamda Bir Tuhaflık</div>
+                </div>
+                <div class="quote-nav">
+                    <div class="quote-dot active" data-index="0"></div>
+                    <div class="quote-dot" data-index="1"></div>
+                    <div class="quote-dot" data-index="2"></div>
+                    <div class="quote-dot" data-index="3"></div>
+                    <div class="quote-dot" data-index="4"></div>
+                    <div class="quote-dot" data-index="5"></div>
+                    <div class="quote-dot" data-index="6"></div>
+                    <div class="quote-dot" data-index="7"></div>
+                    <div class="quote-dot" data-index="8"></div>
+                    <div class="quote-dot" data-index="9"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- İletişim Bölümü -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <h2 class="section-title text-center mb-5">İletişim</h2>
+                    <div class="contact-form" data-aos="fade-up">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Adınız" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="E-posta Adresiniz" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Konu">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Mesajınız" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-submit">Gönder</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Müzik Bilgi Kutusu -->
+    <div id="musicInfo">
+        <i class="fas fa-info-circle"></i> Müziği kontrol etmek için SPACE tuşuna basın
+    </div>
+
+    <!-- Footer -->
+<footer class="footer-section py-5">
+    <div class="container">
+        <div class="row">
+            <!-- Edebiyat Alıntısı Bölümü -->
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="quote-box p-4 h-100" style="background: rgba(255, 255, 255, 0.1); border-left: 3px solid var(--secondary-color);">
+                    <blockquote class="blockquote">
+                        <p class="mb-0"><i class="fas fa-quote-left text-secondary me-2"></i>Kitaplar ruhun karanlık dehlizlerinde yolumuzu aydınlatan fenerlerdir.<i class="fas fa-quote-right text-secondary ms-2"></i></p>
+                        <footer class="blockquote-footer mt-2 text-white">Orhan Pamuk</footer>
+                    </blockquote>
+                </div>
+            </div>
+            
+            <!-- Linkler Bölümü -->
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <h4 class="footer-heading mb-4" style="font-family: 'Cinzel Decorative', cursive; color: var(--secondary-color);">Keşfedin</h4>
+                <ul class="footer-links list-unstyled">
+                    <li class="mb-2"><a href="ana.sayfa.perf.html" class="text-decoration-none text-white">Ana Sayfa</a></li>
+                    <li class="mb-2"><a href="Eserler.html" class="text-decoration-none text-white">Eserler</a></li>
+                    <li class="mb-2"><a href="fotograf galerisi.html" class="text-decoration-none text-white">Fotoğraf Galerisi</a></li>
+                    <li class="mb-2"><a href="haberler.html" class="text-decoration-none text-white">Haberler</a></li>
+                    <li><a href="iletişim.html" class="text-decoration-none text-white">İletişim</a></li>
+                </ul>
+            </div>
+            
+            <!-- Sosyal Medya ve İletişim -->
+            <div class="col-lg-4">
+                <h4 class="footer-heading mb-4" style="font-family: 'Cinzel Decorative', cursive; color: var(--secondary-color);">Bağlantıda Kalın</h4>
+                
+                <!-- Sosyal Medya İkonları -->
+                <div class="social-icons mb-4">
+                    <a href="#" class="social-icon" data-tooltip="Facebook" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon" data-tooltip="Twitter" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-icon" data-tooltip="Instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-icon" data-tooltip="Goodreads" aria-label="Goodreads">
+                        <i class="fab fa-goodreads"></i>
+                    </a>
+                    <a href="#" class="social-icon" data-tooltip="YouTube" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                
+                <!-- Bülten Aboneliği -->
+                <form class="newsletter-form">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="E-posta adresiniz" aria-label="E-posta adresiniz">
+                        <button class="btn btn-outline-light" type="submit">Abone Ol</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Alt Bilgi -->
+        <div class="row mt-5">
+            <div class="col-12 text-center">
+                <div class="footer-divider mb-3" style="height: 1px; background: linear-gradient(90deg, transparent, var(--secondary-color), transparent);"></div>
+                <p class="mb-2 text-white">© 2025 Orhan Pamuk - Tüm Hakları Saklıdır</p>
+                <p class="small text-muted">Bu web sitesi Orhan Pamuk'un edebi mirasını korumak ve tanıtmak amacıyla hazırlanmıştır.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<style>/* Footer Stilleri */
+    .footer-section {
+        background: linear-gradient(135deg, var(--primary-color) 0%, #2A1B3D 100%);
+        position: relative;
+        overflow: hidden;
+        color: white;
+    }
+    
+    .footer-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(90deg, var(--secondary-color), var(--accent-color), var(--secondary-color));
+    }
+    
+    /* Sosyal Medya İkonları */
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .social-icon:hover {
+        background: var(--secondary-color);
+        color: var(--primary-color);
+        transform: translateY(-3px);
+    }
+    
+    .social-icon::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--text-primary);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        opacity: 0;
+        transition: all 0.3s ease;
+        margin-bottom: 10px;
+    }
+    
+    .social-icon:hover::after {
+        opacity: 1;
+        margin-bottom: 5px;
+    }
+    
+    /* Linkler */
+    .footer-links a {
+        transition: all 0.3s ease;
+        position: relative;
+        padding-left: 15px;
+    }
+    
+    .footer-links a::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: var(--secondary-color);
+        transition: all 0.3s ease;
+        opacity: 0;
+    }
+    
+    .footer-links a:hover {
+        color: var(--secondary-color) !important;
+        padding-left: 20px;
+    }
+    
+    .footer-links a:hover::before {
+        opacity: 1;
+    }
+    
+    /* Bülten Formu */
+    .newsletter-form .form-control {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+    }
+    
+    .newsletter-form .form-control::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+    
+    .newsletter-form .btn-outline-light {
+        border-color: var(--secondary-color);
+        color: var(--secondary-color);
+    }
+    
+    .newsletter-form .btn-outline-light:hover {
+        background: var(--secondary-color);
+        color: var(--primary-color);
+    }
+    
+    /* Dekoratif Elementler */
+    .footer-section::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 200px;
+        height: 200px;
+        background: url('https://www.transparenttextures.com/patterns/old-map.png');
+        opacity: 0.05;
+        z-index: 0;
+    }
+    </style></style>
+
+    <!-- Arka Plan Müziği -->
+    <audio id="backgroundMusic" class="hidden-audio" loop>
+        <source src="Dalida - Love in Portofino (Clip Officiel).mp3" type="audio/mpeg">
+        Tarayıcınız audio elementini desteklemiyor.
+    </audio>
+
+    <!-- Scriptler -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Music control functionality
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        const musicInfo = document.getElementById('musicInfo');
+        const musicToggle = document.getElementById('musicToggle');
+        
+        // Try to autoplay music (may be blocked by browser)
+        document.addEventListener('DOMContentLoaded', function() {
+            const playPromise = backgroundMusic.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    // Autoplay was prevented, show info
+                    musicInfo.style.display = 'flex';
+                });
+            }
+        });
+        
+        // Space key to toggle music
+        document.addEventListener('keydown', function(e) {
+            if (e.code === 'Space') {
+                e.preventDefault();
+                toggleMusic();
+            }
+        });
+        
+        function toggleMusic() {
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+                musicInfo.innerHTML = '<i class="fas fa-volume-up"></i> Müzik çalıyor (SPACE ile durdur)';
+            } else {
+                backgroundMusic.pause();
+                musicInfo.innerHTML = '<i class="fas fa-volume-mute"></i> Müzik durdu (SPACE ile başlat)';
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Quote carousel functionality
+        const quotes = document.querySelectorAll('.quote-text');
+        const authors = document.querySelectorAll('.quote-author');
+        const dots = document.querySelectorAll('.quote-dot');
+        let currentIndex = 0;
+        let interval;
+
+        function showQuote(index) {
+            quotes.forEach(quote => quote.classList.remove('active'));
+            authors.forEach(author => author.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            quotes[index].classList.add('active');
+            authors[index].classList.add('active');
+            dots[index].classList.add('active');
+            
+            currentIndex = index;
+        }
+
+        function nextQuote() {
+            let nextIndex = (currentIndex + 1) % (quotes.length / 2);
+            showQuote(nextIndex);
+        }
+
+        function startCarousel() {
+            interval = setInterval(nextQuote, 5000);
+        }
+
+        showQuote(0);
+        startCarousel();
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                clearInterval(interval);
+                const index = parseInt(this.getAttribute('data-index'));
+                showQuote(index);
+                startCarousel();
+            });
+        });
+
+        const quoteBox = document.querySelector('.quote-box');
+        quoteBox.addEventListener('mouseenter', () => clearInterval(interval));
+        quoteBox.addEventListener('mouseleave', startCarousel);
+
+        // Background slideshow functionality
+        const backgroundSlides = document.querySelectorAll('.background-slide');
+        let bgIndex = 0;
+        
+        function changeBackground() {
+            backgroundSlides[bgIndex].classList.remove('active');
+            bgIndex = (bgIndex + 1) % backgroundSlides.length;
+            backgroundSlides[bgIndex].classList.add('active');
+        }
+        
+        setInterval(changeBackground, 5000);
+    </script>
+</body>
+</html>
+<!-- Mevcut HTML'ye bu stilleri ekle -->
+<style>
+    /* Sayfa Geçiş Efektleri */
+    .page-transition {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        pointer-events: none;
+        background: #3D2B3D;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .book-page-effect {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: url('https://www.transparenttextures.com/patterns/old-paper.png');
+        transform-origin: left;
+        transform: perspective(2000px) rotateY(-180deg);
+        transition: all 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+        z-index: 9999;
+        pointer-events: none;
+    }
+
+    .ink-transition {
+        position: fixed;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, #5F0F40 20%, transparent 60%);
+        transform: scale(0);
+        animation: inkSpread 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 9998;
+    }
+
+    @keyframes inkSpread {
+        0% { transform: scale(0); opacity: 1; }
+        100% { transform: scale(2); opacity: 0; }
+    }
+
+    .quote-transition {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #C19A6B;
+        font-family: 'Cinzel Decorative', cursive;
+        font-size: 2rem;
+        opacity: 0;
+        white-space: nowrap;
+        z-index: 9999;
+        pointer-events: none;
+        animation: fadeQuote 1.2s ease;
+    }
+
+    @keyframes fadeQuote {
+        0% { opacity: 0; transform: translate(-50%, -30%); }
+        30% { opacity: 1; transform: translate(-50%, -50%); }
+        70% { opacity: 1; transform: translate(-50%, -50%); }
+        100% { opacity: 0; transform: translate(-50%, -70%); }
+    }
+</style>
+
+<!-- Mevcut script bölümüne bu fonksiyonları ekle -->
+<script>
+    // Sayfa Geçiş Yönetimi
+    function createTransitionElement() {
+        const transition = document.createElement('div');
+        transition.className = 'page-transition';
+        document.body.appendChild(transition);
+        return transition;
+    }
+
+    function createBookPageEffect() {
+        const bookPage = document.createElement('div');
+        bookPage.className = 'book-page-effect';
+        document.body.appendChild(bookPage);
+        return bookPage;
+    }
+
+    function createInkEffect() {
+        const ink = document.createElement('div');
+        ink.className = 'ink-transition';
+        document.body.appendChild(ink);
+        return ink;
+    }
+
+    function createQuoteEffect() {
+        const quotes = [
+            "Kelimelerin Büyüsü...",
+            "Zamanda Yolculuk...",
+            "Edebiyatın İzinde...",
+            "Hikayeler Dünyasına..."
+        ];
+        const quote = document.createElement('div');
+        quote.className = 'quote-transition';
+        quote.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+        document.body.appendChild(quote);
+        return quote;
+    }
+
+    // Tüm linklere geçiş efekti ekle
+    document.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const target = e.currentTarget.href;
+            
+            if(target && target !== '#' && !target.includes('javascript')) {
+                e.preventDefault();
+                
+                const transition = createTransitionElement();
+                const bookPage = createBookPageEffect();
+                const ink = createInkEffect();
+                const quote = createQuoteEffect();
+
+                transition.style.opacity = '1';
+                
+                setTimeout(() => {
+                    bookPage.style.transform = 'perspective(2000px) rotateY(0deg)';
+                }, 50);
+
+                setTimeout(() => {
+                    window.location.href = target;
+                }, 1200);
+            }
+        });
+    });
+
+    // Sayfa yüklendiğinde efekt
+    window.addEventListener('DOMContentLoaded', () => {
+        const transition = createTransitionElement();
+        transition.style.opacity = '1';
+        
+        setTimeout(() => {
+            transition.style.opacity = '0';
+            setTimeout(() => transition.remove(), 500);
+        }, 800);
+    });
+</script>
